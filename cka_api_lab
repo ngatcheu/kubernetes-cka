@@ -1,0 +1,15 @@
+Install the kubectl convert plugin on the controlplane node.
+
+A plugin for Kubernetes command-line tool kubectl, which allows you to convert manifests between different API versions. 
+This can be particularly helpful to migrate manifests to a non-deprecated api version with newer Kubernetes release. 
+For more info, visit migrate to non deprecated apis
+
+https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-kubectl-convert-plugin
+
+
+--Ingress manifest file is already given under the /root/ directory called ingress-old.yaml.
+With help of the kubectl convert command, change the deprecated API version to the networking.k8s.io/v1 and create the resource.
+
+re:Run the command: 
+kubectl-convert -f ingress-old.yaml --output-version networking.k8s.io/v1
+kubectl-convert -f ingress-old.yaml --output-version networking.k8s.io/v1 > ingress-new.yaml
