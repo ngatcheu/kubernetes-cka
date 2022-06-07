@@ -1,0 +1,29 @@
+--Identify the name of the Operating system installed.
+re: Run the command 
+cat /etc/*release* 
+and identify the name of the operating system.
+
+--Install the helm package.
+https://helm.sh/docs/intro/install/#from-apt-debianubuntu
+use theses commandes :
+
+curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
+sudo apt-get install apt-transport-https --yes
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+sudo apt-get update
+sudo apt-get install helm
+
+--Use the help page of helm command to identify the command used to retrieve helm client environment information.
+re:Run the command
+           helm --help
+and identify the command used to retrieve helm client environment information.
+              helm env
+
+--Identify the version of helm installed on the cluster.
+re:  Run the command
+     helm version
+     
+--What is a command line flag used to enable verbose output?
+re:Run the command helm --help and identify the command to enable the verbose output.
+    helm --debug
+
